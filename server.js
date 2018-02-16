@@ -2,7 +2,7 @@ const express= require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 var app = express();
-
+const port = process.env.PORT||3000;
 app.use(  (req,res,next)=>{
     var now= new Date().toString();
     var log = `${now} + ${req.method} ${req.url}`;
@@ -50,6 +50,6 @@ app.get('/bad', (req,res)=>{
         errorMessage:'Badd Request Error'
     });
 })
-app.listen(3000,()=>{
-    console.log('Server is up');
+app.listen(port,()=>{
+    console.log(`Server is up ${port}`);
 });
