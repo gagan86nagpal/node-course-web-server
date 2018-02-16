@@ -39,9 +39,13 @@ hbs.registerHelper('screamIt',(text)=>{
 app.set('view_engine','hbs');
 app.use(express.static(__dirname +'/public'));
 app.get('/about',(req,res)=>{
-    //res.send('<h1> ABOUT ME </h1>');
     res.render('about.hbs',{
         pageTitle: 'About Page'
+    });
+})
+app.get('/projects',(req,res)=>{
+    res.render('projects.hbs',{
+        pageTitle: 'Projects Page'
     });
 })
 
